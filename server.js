@@ -9,11 +9,15 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // 🔴 UPDATE THIS PASSWORD
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "usn22@bhumi29",   // 👉 change this to your MySQL password
-    database: "notification_db"
+const db = mysql.createPool({
+    host: process.env.MYSQLHOST,
+    user: process.env.MYSQLUSER,
+    password: process.env.MYSQLPASSWORD,
+    database: process.env.MYSQLDATABASE,
+    port: process.env.MYSQLPORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 // 🔹 Connect to MySQL
