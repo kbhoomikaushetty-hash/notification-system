@@ -21,11 +21,12 @@ const db = mysql.createPool({
 });
 
 // 🔹 Connect to MySQL
-db.connect((err) => {
+db.getConnection((err, connection) => {
     if (err) {
         console.log("❌ DB Connection Error:", err);
     } else {
         console.log("✅ MySQL Connected Successfully");
+        connection.release();
     }
 });
 
