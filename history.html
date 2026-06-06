@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Delete History</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f6f8;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    margin-top:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+th{
+    background:#007bff;
+    color:white;
+}
+
+.restore-btn{
+    background:green;
+    color:white;
+    border:none;
+    padding:6px 10px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🗑️ Deleted Notifications History</h1>
+
+<a href="admin.html">
+⬅ Back to Dashboard
+</a>
+
+<br><br>
+
+<table>
+
+<thead>
+<tr>
+<th>Original ID</th>
+<th>Message</th>
+<th>Deleted At</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="history-body">
+</tbody>
+
+</table>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
